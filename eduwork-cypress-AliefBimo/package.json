@@ -1,0 +1,15 @@
+{
+  "name": "eduwork-cypress-AliefBimo",
+  "version": "1.0.0",
+  "description": "automation ui using cypress",
+  "main": "index.js",
+  "author": "bimo",
+  "license": "MIT",
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610",
+  "devDependencies": {
+    "cypress": "^13.14.2"
+  },
+  "scripts": {
+    "cy:open": "cypress open"
+  }
+}
