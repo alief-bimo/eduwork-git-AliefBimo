@@ -17,6 +17,6 @@ describe('Working with inputs', () => {
 
     it('Should check keep sign in', () => {
         //cy.get('#user_remember_me').click()
-        cy.get('#user_remember_me').not('[disabled]').check()
+        cy.get('#user_remember_me').check()
     });
 });
