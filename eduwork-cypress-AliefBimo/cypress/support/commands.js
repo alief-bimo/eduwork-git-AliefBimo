@@ -23,3 +23,41 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('login', (username,password) => {
+    cy.clearCookies()
+    cy.clearLocalStorage()
+
+    cy.get('#user_login').clear()
+    cy.get ('#user_login').type(username)
+    cy.get('#user_login').should('have.value', username)
+
+    cy.get('input[name="user_password"]').clear()
+    cy.get('input[name="user_password"]').type(password)
+    cy.get('input[name="user_password"]').should('have.value', password)
+
+    cy.get('input[name="submit"]').click()
+
+})
+
+Cypress.Commands.add('paybill', (payee, account, amount, date, description) => {
+    cy.visit('http://zero.webappsecurity.com/bank/pay-bills.html')
+  
+    cy.get('#sp_payee').select(payee)
+  
+    cy.get('#sp_account').select(account)
+  
+    cy.get('#sp_amount').type(amount)
+  
+    cy.get('#sp_date').type(date)
+
+    cy.get('#sp_amount').click()
+  
+    cy.get('#sp_description').type(description)
+  
+    cy.get('#pay_saved_payees').click()
+  
+    cy.get('#alert_content')
+      .should('be.visible')
+      .and('contain.text', 'The payment was successfully submitted.')
+  })

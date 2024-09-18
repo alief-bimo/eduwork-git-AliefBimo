@@ -20,13 +20,7 @@ describe('Working with inputs', () => {
             const username = user.username
             const password = user.password
             
-            cy.get('#user_login').clear()
-            cy.get ('#user_login').type(username)
-
-            cy.get('input[name="user_password"]').clear()
-            cy.get('input[name="user_password"]').type(password)
-
-            cy.get('input[name="submit"]').click()
+            cy.login(username, password)
 
             cy.get('.alert-error').should('contain.text','Login and/or password are wrong.')
         })
