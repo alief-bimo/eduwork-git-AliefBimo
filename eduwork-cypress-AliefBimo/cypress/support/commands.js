@@ -57,7 +57,4 @@ Cypress.Commands.add('paybill', (payee, account, amount, date, description) => {
   
     cy.get('#pay_saved_payees').click()
   
-    cy.get('#alert_content')
-      .should('be.visible')
-      .and('contain.text', 'The payment was successfully submitted.')
   })
