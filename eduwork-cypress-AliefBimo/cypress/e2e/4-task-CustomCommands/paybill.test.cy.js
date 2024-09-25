@@ -14,7 +14,6 @@ describe('commands for paybill', () => {
     });
 
     it('Should make a payment', () => {
-        
         cy.paybill('Apple','Loan', '100', '2024-09-18', 'Random Payment')
     });
     
