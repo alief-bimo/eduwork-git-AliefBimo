@@ -39,3 +39,19 @@ Cypress.Commands.add('login', (username,password) => {
     cy.get('input[name="submit"]').click()
 
 })
+
+Cypress.Commands.add('sauceLogin', (username,password) => {
+    cy.clearCookies()
+    cy.clearLocalStorage()
+
+    cy.get('#user-name').clear()
+    cy.get ('#user-name').type(username)
+    cy.get('#user-name').should('have.value', username)
+
+    cy.get('#password').clear()
+    cy.get('#password').type(password)
+    cy.get('#password').should('have.value', password)
+
+    cy.get('#login-button').click()
+
+})
