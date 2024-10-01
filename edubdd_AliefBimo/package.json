@@ -1,0 +1,20 @@
+{
+  "name": "edubdd_AliefBimo",
+  "version": "1.0.0",
+  "description": "automation test with cypress bdd",
+  "main": "index.js",
+  "author": "AliefBimo",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "12.3.0",
+    "prettier": "^3.3.3"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "15.1.1",
+    "@cypress/browserify-preprocessor": "^3.0.2"
+  },
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  }
+}
