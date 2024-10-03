@@ -11,15 +11,5 @@ describe('POST user', () => {
             expect(response.body).have.property('name', user.name)
             expect(response.body).have.property('job', user.job)
         })
-        
-        // cy.request({
-        //     method: 'GET',
-        //     url: 'https://reqres.in/api/users'
-        // }).then ((response) => {
-        //     expect(response.body).have.property('name')
-
-        // })
-        //cy.get('@users').its('body').property('name')
-        //cy.get('@users').its('body').should('contain',user.job)
     });
 });
