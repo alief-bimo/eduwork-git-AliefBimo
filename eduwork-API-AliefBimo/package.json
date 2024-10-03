@@ -1,0 +1,11 @@
+{
+  "name": "eduwork-API-AliefBimo",
+  "version": "1.0.0",
+  "description": "automate API test",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "12.3.0",
+    "prettier": "^3.3.3"
+  }
+}
