@@ -8,4 +8,21 @@ describe('Validate Header', () => {
         .should('include','application/json; charset=utf-8')
         
     });
+
+    it('Sucessfully validate status code', () => {
+        cy.request('https://pokeapi.co/api/v2/pokemon/ditto').as('pokemon')
+        //assertions code
+        cy.get('@pokemon').its('status').should('equal', 200)
+        
+    });
+
+    it('Sucessfully validate status code with param', () => {
+        cy.request({
+            method: "GET",
+            url: 'https://pokeapi.co/api/v2/pokemon/ditto'
+        }).as('pokemon')
+        cy.get('@pokemon').its('status').should('equal', 200)
+    });
+
+
 });
